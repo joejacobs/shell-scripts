@@ -1,0 +1,6 @@
+#!/bin/sh
+packages=`conda list | cut -d \  -f 1 | grep -v -e [#]`
+
+for x in $packages; do
+    conda update --yes $x
+done
